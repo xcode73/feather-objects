@@ -96,7 +96,7 @@ final class FeatherApiTests: XCTestCase {
         }
         
         XCTAssertEqual(User.assetKey, "user")
-        XCTAssertEqual(Account.assetKey, "user/accounts")
+        XCTAssertEqual(Account.assetKey, "accounts")
     }
     
     func testPermissionKey() async throws {
@@ -127,5 +127,19 @@ final class FeatherApiTests: XCTestCase {
             "user.account.patch",
             "user.account.delete"
         ])
+    }
+    
+    
+    func testFeatherSystem() async throws {
+        XCTAssertEqual(FeatherSystem.pathKey, "system")
+        XCTAssertEqual(FeatherSystem.assetKey, "system")
+        
+        XCTAssertEqual(FeatherPermission.pathKey, "permissions")
+        XCTAssertEqual(FeatherPermission.pathIdKey, "permissionId")
+        XCTAssertEqual(FeatherPermission.assetKey, "permissions")
+        
+        XCTAssertEqual(FeatherPermission.urlPath, "system/permissions")
+        XCTAssertEqual(FeatherPermission.idUrlPath, "system/permissions/:permissionId")
+        XCTAssertEqual(FeatherPermission.assetPath, "system/permissions")
     }
 }
