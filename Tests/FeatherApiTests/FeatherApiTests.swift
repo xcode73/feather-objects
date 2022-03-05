@@ -32,7 +32,7 @@ final class FeatherApiTests: XCTestCase {
         XCTAssertEqual(permission, expectation)
     }
     
-    func testUserPermissionLevels() async throws {
+    func testUserPermissionByLevel() async throws {
         let guestUser = FeatherUser(id: .init(), level: .guest, roles: [])
         let user = FeatherUser(id: .init(), level: .authenticated, roles: [])
         let rootUser = FeatherUser(id: .init(), level: .root, roles: [])
@@ -43,7 +43,7 @@ final class FeatherApiTests: XCTestCase {
         XCTAssertTrue(rootUser.hasPermission(permission))
     }
     
-    func testUserPermissionRoles() async throws {
+    func testUserPermissionByRoles() async throws {
         let permission1 = FeatherPermission("user.account.login")
         let permission2 = FeatherPermission("user.account.register")
         let role = FeatherRole(key: "admins", permissions: [
@@ -62,5 +62,19 @@ final class FeatherApiTests: XCTestCase {
         XCTAssertFalse(guestUser.hasPermission(permission2))
         XCTAssertFalse(user.hasPermission(permission2))
         XCTAssertTrue(rootUser.hasPermission(permission2))
+    }
+    
+    func testUserRole() async throws {
+        let key = "admins"
+        let role = FeatherRole(key: key, permissions: [])
+        
+        let guestUser = FeatherUser(id: .init(), level: .guest, roles: [role])
+        let user = FeatherUser(id: .init(), level: .authenticated, roles: [role])
+        let rootUser = FeatherUser(id: .init(), level: .root, roles: [])
+        
+        
+        XCTAssertTrue(guestUser.hasRole(key))
+        XCTAssertTrue(user.hasRole(key))
+        XCTAssertFalse(rootUser.hasRole(key))
     }
 }

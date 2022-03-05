@@ -57,4 +57,9 @@ public struct FeatherUser: Codable {
     public func hasPermission(_ key: String) -> Bool {
         hasPermission(.init(key))
     }
+    
+    /// checks if the user has a given role using a unique role key
+    public func hasRole(_ key: String) -> Bool {
+        roles.contains { $0.key == key }
+    }
 }
