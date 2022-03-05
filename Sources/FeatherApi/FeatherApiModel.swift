@@ -7,6 +7,7 @@
 
 /// generic API model
 public protocol FeatherApiModel: FeatherApiComponent {
+
     /// the associated Module
     associatedtype Module: FeatherApiModule
     

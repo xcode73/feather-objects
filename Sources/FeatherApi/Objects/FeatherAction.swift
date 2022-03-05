@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 public extension FeatherPermission {
     
     /// generic action for permissions
