@@ -5,6 +5,7 @@
 //  Created by Tibor Bodecs on 2021. 12. 26..
 //
 
+/// generic API module protocol
 public protocol FeatherApiModule: FeatherApiComponent {
     
 }

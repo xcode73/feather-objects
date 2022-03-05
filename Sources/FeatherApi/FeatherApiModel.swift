@@ -5,9 +5,12 @@
 //  Created by Tibor Bodecs on 2021. 12. 26..
 //
 
-public protocol FeatherApiModel: FeatherApiComponent {    
+/// generic API model
+public protocol FeatherApiModel: FeatherApiComponent {
+    /// the associated Module
     associatedtype Module: FeatherApiModule
     
+    /// key to identify a given object (e.g. userId)
     static var pathIdKey: String { get }
 }
 
