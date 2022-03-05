@@ -14,7 +14,7 @@ public struct FeatherMetadata: Codable {
         case published
         case archived
     }
-
+    
     public var id: UUID
     public var module: String
     public var model: String
@@ -31,7 +31,7 @@ public struct FeatherMetadata: Codable {
     public var css: String?
     public var js: String?
     
-    public init(id: UUID,
+    public init(id: UUID = .init(),
                 module: String,
                 model: String,
                 reference: UUID,
@@ -39,11 +39,11 @@ public struct FeatherMetadata: Codable {
                 title: String? = nil,
                 excerpt: String? = nil,
                 imageKey: String? = nil,
-                date: Date,
-                status: FeatherMetadata.Status,
-                feedItem: Bool,
+                date: Date = .init(),
+                status: FeatherMetadata.Status = .draft,
+                feedItem: Bool = false,
                 canonicalUrl: String? = nil,
-                filters: [String],
+                filters: [String] = [],
                 css: String? = nil,
                 js: String? = nil) {
         self.id = id
@@ -62,6 +62,6 @@ public struct FeatherMetadata: Codable {
         self.css = css
         self.js = js
     }
-
+    
 }
 
