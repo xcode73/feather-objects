@@ -9,10 +9,10 @@ import Foundation
 
 public struct FeatherError: Codable {
 
-    public let message: String?
+    public let message: String
     public let details: [FeatherErrorDetail]
     
-    public init(message: String?, details: [FeatherErrorDetail]) {
+    public init(message: String, details: [FeatherErrorDetail]) {
         self.message = message
         self.details = details
     }
