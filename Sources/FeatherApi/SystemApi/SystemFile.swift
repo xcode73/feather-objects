@@ -15,43 +15,24 @@ public extension System {
 
 public extension System.File {
     
-    struct Item: Codable {
+    struct Detail: Codable {
+
         public let path: String
         public let name: String
-        public let ext: String?
+        public let ext: String
 
-        public init(path: String, name: String, ext: String? = nil) {
+        public init(path: String, name: String, ext: String) {
             self.path = path
             self.name = name
             self.ext = ext
         }
         
-        public var isDirectory: Bool { ext == nil }
-        public var isFile: Bool { !isDirectory }
-    }
-
-    struct Directory: Codable {
-    
-        public struct Create: Codable {
-            public let key: String?
-            public let name: String
-            
-            public init(key: String?, name: String) {
-                self.key = key
-                self.name = name
+        public var key: String {
+            var safePath = path
+            if !path.hasSuffix("/") {
+                safePath += "/"
             }
-        }
-        
-        struct List: Codable {
-            public let current: Item?
-            public let parent: Item?
-            public let children: [Item]
-            
-            public init(current: Item?, parent: Item?, children: [Item]) {
-                self.current = current
-                self.parent = parent
-                self.children = children
-            }
+            return safePath + name + "." + ext
         }
     }
    
