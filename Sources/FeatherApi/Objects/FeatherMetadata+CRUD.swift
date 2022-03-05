@@ -1,24 +1,18 @@
 //
-//  File.swift
-//  
+//  FeatherMetadata+CRUD.swift
+//  FeatherApi
 //
-//  Created by Tibor Bodecs on 2022. 02. 23..
+//  Created by Tibor Bodecs on 2022. 03. 05..
 //
 
 import Foundation
 
-public extension System {
-    
-    struct Metadata: FeatherApiModel {
-        public typealias Module = System
-    }
-}
-
-public extension System.Metadata {
+public extension FeatherMetadata {
     
     // MARK: -
     
     struct List: Codable {
+        
         public var id: UUID
         public var module: String
         public var model: String
@@ -200,4 +194,3 @@ public extension System.Metadata {
         }
     }
 }
-

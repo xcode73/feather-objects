@@ -1,20 +1,13 @@
 //
-//  File.swift
-//  
+//  FeatherPermission+CRUD.swift
+//  FeatherApi
 //
 //  Created by Tibor Bodecs on 2022. 02. 23..
 //
 
 import Foundation
 
-public extension System {
-    
-    struct Permission: FeatherApiModel {
-        public typealias Module = System
-    }
-}
-
-public extension System.Permission {
+public extension FeatherPermission {
     
     // MARK: -
     

@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  FeatherApiTests.swift
+//  FeatherApiTests
 //
 //  Created by Tibor Bodecs on 2022. 01. 03..
 //
@@ -9,7 +9,7 @@ import XCTest
 @testable import FeatherApi
 
 final class FeatherApiTests: XCTestCase {
-
+    
     func testPermissionEncode() async throws {
         let permission = FeatherPermission("user.account.login")
         let encoder = JSONEncoder()
@@ -27,7 +27,7 @@ final class FeatherApiTests: XCTestCase {
         let data = value.data(using: .utf8)!
         let decoder = JSONDecoder()
         let permission = try decoder.decode(FeatherPermission.self, from: data)
-                
+        
         let expectation = FeatherPermission("user.account.login")
         XCTAssertEqual(permission, expectation)
     }
@@ -76,5 +76,56 @@ final class FeatherApiTests: XCTestCase {
         XCTAssertTrue(guestUser.hasRole(key))
         XCTAssertTrue(user.hasRole(key))
         XCTAssertFalse(rootUser.hasRole(key))
+    }
+    
+    func testPathKeys() async throws {
+        struct User: FeatherApiModule {}
+        struct Account: FeatherApiModel {
+            typealias Module = User
+        }
+        
+        XCTAssertEqual(User.pathKey, "user")
+        XCTAssertEqual(Account.pathKey, "accounts")
+        XCTAssertEqual(Account.pathIdKey, "accountId")
+    }
+    
+    func testAssetKey() async throws {
+        struct User: FeatherApiModule {}
+        struct Account: FeatherApiModel {
+            typealias Module = User
+        }
+        
+        XCTAssertEqual(User.assetKey, "user")
+        XCTAssertEqual(Account.assetKey, "user/accounts")
+    }
+    
+    func testPermissionKey() async throws {
+        struct User: FeatherApiModule {}
+        struct Account: FeatherApiModel {
+            typealias Module = User
+        }
+        
+        XCTAssertEqual(User.permissionKey, "user")
+        XCTAssertEqual(Account.permissionKey, "account")
+    }
+    
+    func testAvailablePermissions() async throws {
+        struct User: FeatherApiModule {}
+        struct Account: FeatherApiModel {
+            typealias Module = User
+        }
+        
+        XCTAssertEqual(User.availablePermissions().map(\.key), [
+            "user.module.detail"
+        ])
+
+        XCTAssertEqual(Account.availablePermissions().map(\.key), [
+            "user.account.list",
+            "user.account.detail",
+            "user.account.create",
+            "user.account.update",
+            "user.account.patch",
+            "user.account.delete"
+        ])
     }
 }

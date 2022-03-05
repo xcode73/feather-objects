@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  
+//  FeatherPermissionAction.swift
+//  FeatherApi
 //
 //  Created by Tibor Bodecs on 2022. 03. 05..
 //
@@ -8,7 +8,7 @@
 import Foundation
 
 public extension FeatherPermission {
-    
+
     /// generic action for permissions
     enum Action: Equatable, Codable {
         /// action for list objects

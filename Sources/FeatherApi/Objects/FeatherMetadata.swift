@@ -1,20 +1,20 @@
 //
-//  File.swift
-//  
+//  FeatherMetadata.swift
+//  FeatherApi
 //
-//  Created by Tibor Bodecs on 2021. 12. 26..
+//  Created by Tibor Bodecs on 2022. 02. 23..
 //
 
 import Foundation
 
 public struct FeatherMetadata: Codable {
-
+    
     public enum Status: String, Codable, CaseIterable {
         case draft
         case published
         case archived
     }
-    
+
     public var id: UUID
     public var module: String
     public var model: String
@@ -31,7 +31,7 @@ public struct FeatherMetadata: Codable {
     public var css: String?
     public var js: String?
     
-    public init(id: UUID = .init(),
+    public init(id: UUID,
                 module: String,
                 model: String,
                 reference: UUID,
@@ -39,11 +39,11 @@ public struct FeatherMetadata: Codable {
                 title: String? = nil,
                 excerpt: String? = nil,
                 imageKey: String? = nil,
-                date: Date = .init(),
-                status: FeatherMetadata.Status = .draft,
-                feedItem: Bool = false,
+                date: Date,
+                status: FeatherMetadata.Status,
+                feedItem: Bool,
                 canonicalUrl: String? = nil,
-                filters: [String] = [],
+                filters: [String],
                 css: String? = nil,
                 js: String? = nil) {
         self.id = id
@@ -62,4 +62,6 @@ public struct FeatherMetadata: Codable {
         self.css = css
         self.js = js
     }
+
 }
+

@@ -1,20 +1,13 @@
 //
-//  File.swift
-//  
+//  FeatherVariable+CRUD.swift
+//  FeatherApi
 //
 //  Created by Tibor Bodecs on 2022. 02. 23..
 //
 
 import Foundation
 
-public extension System {
-    
-    enum Variable: FeatherApiModel {
-        public typealias Module = System
-    }
-}
-
-public extension System.Variable {
+public extension FeatherVariable {
     
     // MARK: -
     
