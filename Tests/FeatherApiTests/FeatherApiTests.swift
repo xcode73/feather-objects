@@ -154,6 +154,8 @@ final class FeatherApiTests: XCTestCase {
         XCTAssertEqual(FeatherPermission.urlPath, "system/permissions")
         XCTAssertEqual(FeatherPermission.idUrlPath, "system/permissions/:permissionId")
         XCTAssertEqual(FeatherPermission.assetPath, "system/permissions")
+        
+        XCTAssertEqual(FeatherFile.availablePermissions().count, 3)
     }
     
     func testFeatherMenuSort() async throws {
