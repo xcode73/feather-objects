@@ -157,7 +157,7 @@ final class FeatherApiTests: XCTestCase {
     }
     
     func testFeatherMenuSort() async throws {
-        let menu = FeatherMenu(key: "test", items: [
+        let menu = FeatherMenu(key: "test", name: "test menu", items: [
             .init(label: "a", url: "a", priority: 10, isBlank: false, permission: nil),
             .init(label: "b", url: "b", priority: 1000, isBlank: false, permission: nil),
             .init(label: "c", url: "c", priority: 20, isBlank: false, permission: nil),
