@@ -127,6 +127,19 @@ final class FeatherApiTests: XCTestCase {
             "user.account.patch",
             "user.account.delete"
         ])
+        
+        XCTAssertEqual(FeatherSystem.availablePermissions().map(\.key), [
+            "system.module.detail"
+        ])
+
+        XCTAssertEqual(FeatherMetadata.availablePermissions().map(\.key), [
+            "system.metadata.list",
+            "system.metadata.detail",
+            "system.metadata.create",
+            "system.metadata.update",
+            "system.metadata.patch",
+            "system.metadata.delete"
+        ])
     }
     
     

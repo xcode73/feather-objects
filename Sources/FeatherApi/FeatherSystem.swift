@@ -9,6 +9,7 @@ import Foundation
 
 public enum FeatherSystem: FeatherApiModule {
     
+    public static var permissionKey: String { "system" }
     public static var pathKey: String { "system" }
     public static var assetKey: String { "system" }
 }
@@ -16,6 +17,7 @@ public enum FeatherSystem: FeatherApiModule {
 extension FeatherMetadata: FeatherApiModel {
     public typealias Module = FeatherSystem
     
+    public static var permissionKey: String { "metadata" }
     public static var pathKey: String { "metadatas" }
     public static var pathIdKey: String { "metadataId" }
 }
@@ -23,6 +25,7 @@ extension FeatherMetadata: FeatherApiModel {
 extension FeatherVariable: FeatherApiModel {
     public typealias Module = FeatherSystem
     
+    public static var permissionKey: String { "variable" }
     public static var pathKey: String { "variables" }
     public static var pathIdKey: String { "variableId" }
 }
@@ -30,6 +33,7 @@ extension FeatherVariable: FeatherApiModel {
 extension FeatherPermission: FeatherApiModel {
     public typealias Module = FeatherSystem
     
+    public static var permissionKey: String { "permission" }
     public static var pathKey: String { "permissions" }
     public static var pathIdKey: String { "permissionId" }
 }
@@ -37,6 +41,7 @@ extension FeatherPermission: FeatherApiModel {
 extension FeatherFile: FeatherApiModel {
     public typealias Module = FeatherSystem
     
+    public static var permissionKey: String { "file" }
     public static var pathKey: String { "files" }
     public static var pathIdKey: String { "fileId" }
 }
