@@ -12,9 +12,9 @@ public extension FeatherVariable {
     // MARK: -
     
     struct List: Codable {
-        public var id: UUID
-        public var key: String
-        public var value: String?
+        public let id: UUID
+        public let key: String
+        public let value: String?
         
         public init(id: UUID,
                     key: String,
@@ -28,11 +28,11 @@ public extension FeatherVariable {
     // MARK: -
     
     struct Detail: Codable {
-        public var id: UUID
-        public var key: String
-        public var name: String
-        public var value: String?
-        public var notes: String?
+        public let id: UUID
+        public let key: String
+        public let name: String
+        public let value: String?
+        public let notes: String?
         
         public init(id: UUID,
                     key: String,
@@ -50,10 +50,10 @@ public extension FeatherVariable {
     // MARK: -
     
     struct Create: Codable {
-        public var key: String
-        public var name: String
-        public var value: String?
-        public var notes: String?
+        public let key: String
+        public let name: String
+        public let value: String?
+        public let notes: String?
         
         public init(key: String,
                     name: String,
@@ -69,10 +69,10 @@ public extension FeatherVariable {
     // MARK: -
     
     struct Update: Codable {
-        public var key: String
-        public var name: String
-        public var value: String?
-        public var notes: String?
+        public let key: String
+        public let name: String
+        public let value: String?
+        public let notes: String?
         
         public init(key: String,
                     name: String,
@@ -88,10 +88,10 @@ public extension FeatherVariable {
     // MARK: -
     
     struct Patch: Codable {
-        public var key: String?
-        public var name: String?
-        public var value: String?
-        public var notes: String?
+        public let key: String?
+        public let name: String?
+        public let value: String?
+        public let notes: String?
         
         public init(key: String? = nil,
                     name: String? = nil,

@@ -12,11 +12,11 @@ public extension FeatherPermission {
     // MARK: -
     
     struct List: Codable {
-        public var id: UUID
-        public var namespace: String
-        public var context: String
-        public var action: String
-        public var name: String
+        public let id: UUID
+        public let namespace: String
+        public let context: String
+        public let action: String
+        public let name: String
         
         public init(id: UUID,
                     namespace: String,
@@ -34,12 +34,12 @@ public extension FeatherPermission {
     // MARK: -
     
     struct Detail: Codable {
-        public var id: UUID
-        public var namespace: String
-        public var context: String
-        public var action: String
-        public var name: String
-        public var notes: String?
+        public let id: UUID
+        public let namespace: String
+        public let context: String
+        public let action: String
+        public let name: String
+        public let notes: String?
         
         public init(id: UUID,
                     namespace: String,
@@ -59,11 +59,11 @@ public extension FeatherPermission {
     // MARK: -
     
     struct Create: Codable {
-        public var namespace: String
-        public var context: String
-        public var action: String
-        public var name: String
-        public var notes: String?
+        public let namespace: String
+        public let context: String
+        public let action: String
+        public let name: String
+        public let notes: String?
         
         public init(namespace: String,
                     context: String,
@@ -89,11 +89,11 @@ public extension FeatherPermission {
     // MARK: -
     
     struct Update: Codable {
-        public var namespace: String
-        public var context: String
-        public var action: String
-        public var name: String
-        public var notes: String?
+        public let namespace: String
+        public let context: String
+        public let action: String
+        public let name: String
+        public let notes: String?
         
         public init(namespace: String,
                     context: String,
@@ -111,11 +111,11 @@ public extension FeatherPermission {
     // MARK: -
     
     struct Patch: Codable {
-        public var namespace: String?
-        public var context: String?
-        public var action: String?
-        public var name: String?
-        public var notes: String?
+        public let namespace: String?
+        public let context: String?
+        public let action: String?
+        public let name: String?
+        public let notes: String?
         
         public init(namespace: String? = nil,
                     context: String? = nil,

@@ -21,13 +21,13 @@ public struct FeatherUser: Codable {
     }
 
     /// unique identifier of the user
-    public var id: UUID
+    public let id: UUID
     
     /// user level
-    public var level: Level
+    public let level: Level
     
     /// associated user roles
-    public var roles: [FeatherRole]
+    public let roles: [FeatherRole]
 
     /// init a new user with a given level and a set of roles
     public init(id: UUID,

@@ -15,21 +15,21 @@ public struct FeatherMetadata: Codable {
         case archived
     }
     
-    public var id: UUID
-    public var module: String
-    public var model: String
-    public var reference: UUID
-    public var slug: String
-    public var title: String?
-    public var excerpt: String?
-    public var imageKey: String?
-    public var date: Date
-    public var status: FeatherMetadata.Status
-    public var feedItem: Bool
-    public var canonicalUrl: String?
-    public var filters: [String]
-    public var css: String?
-    public var js: String?
+    public let id: UUID
+    public let module: String
+    public let model: String
+    public let reference: UUID
+    public let slug: String
+    public let title: String?
+    public let excerpt: String?
+    public let imageKey: String?
+    public let date: Date
+    public let status: FeatherMetadata.Status
+    public let feedItem: Bool
+    public let canonicalUrl: String?
+    public let filters: [String]
+    public let css: String?
+    public let js: String?
     
     public init(id: UUID = .init(),
                 module: String,

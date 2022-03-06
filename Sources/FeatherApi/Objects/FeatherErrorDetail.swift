@@ -11,10 +11,10 @@ import Foundation
 public struct FeatherErrorDetail: Codable {
 
     /// the key of the referenced field or property
-    public var key: String
+    public let key: String
     
     /// error message
-    public var message: String
+    public let message: String
     
     /// init a new error detail object using a key and a message
     public init(key: String, message: String) {
