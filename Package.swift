@@ -2,21 +2,21 @@
 import PackageDescription
 
 let package = Package(
-    name: "feather-api",
+    name: "feather-objects",
     platforms: [
        .macOS(.v10_15),
     ],
     products: [
-        .library(name: "FeatherApi", targets: ["FeatherApi"]),
+        .library(name: "FeatherObjects", targets: ["FeatherObjects"]),
     ],
     dependencies: [
         
     ],
     targets: [
-        .target(name: "FeatherApi", dependencies: []),
+        .target(name: "FeatherObjects", dependencies: []),
         
-        .testTarget(name: "FeatherApiTests", dependencies: [
-            .target(name: "FeatherApi"),
+        .testTarget(name: "FeatherObjectsTests", dependencies: [
+            .target(name: "FeatherObjects"),
         ]),
     ]
 )

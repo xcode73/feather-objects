@@ -1,20 +1,20 @@
 //
 //  FeatherSystem.swift
-//  FeatherApi
+//  FeatherObjects
 //
 //  Created by Tibor Bodecs on 2022. 03. 05..
 //
 
 import Foundation
 
-public enum FeatherSystem: FeatherApiModule {
+public enum FeatherSystem: FeatherObjectModule {
     
     public static var permissionKey: String { "system" }
     public static var pathKey: String { "system" }
     public static var assetKey: String { "system" }
 }
 
-extension FeatherMetadata: FeatherApiModel {
+extension FeatherMetadata: FeatherObjectModel {
     public typealias Module = FeatherSystem
     
     public static var permissionKey: String { "metadata" }
@@ -22,7 +22,7 @@ extension FeatherMetadata: FeatherApiModel {
     public static var pathIdKey: String { "metadataId" }
 }
 
-extension FeatherVariable: FeatherApiModel {
+extension FeatherVariable: FeatherObjectModel {
     public typealias Module = FeatherSystem
     
     public static var permissionKey: String { "variable" }
@@ -30,7 +30,7 @@ extension FeatherVariable: FeatherApiModel {
     public static var pathIdKey: String { "variableId" }
 }
 
-extension FeatherPermission: FeatherApiModel {
+extension FeatherPermission: FeatherObjectModel {
     public typealias Module = FeatherSystem
     
     public static var permissionKey: String { "permission" }
@@ -38,7 +38,7 @@ extension FeatherPermission: FeatherApiModel {
     public static var pathIdKey: String { "permissionId" }
 }
 
-extension FeatherFile: FeatherApiModel {
+extension FeatherFile: FeatherObjectModel {
     public typealias Module = FeatherSystem
     
     public static var permissionKey: String { "file" }

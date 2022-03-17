@@ -1,14 +1,14 @@
 //
-//  FeatherApiTests.swift
-//  FeatherApiTests
+//  FeatherObjectsTests.swift
+//  FeatherObjectsTests
 //
 //  Created by Tibor Bodecs on 2022. 01. 03..
 //
 
 import XCTest
-@testable import FeatherApi
+@testable import FeatherObjects
 
-final class FeatherApiTests: XCTestCase {
+final class FeatherObjectsTests: XCTestCase {
     
     func testPermissionEncode() async throws {
         let permission = FeatherPermission("user.account.login")
@@ -79,8 +79,8 @@ final class FeatherApiTests: XCTestCase {
     }
     
     func testPathKeys() async throws {
-        struct User: FeatherApiModule {}
-        struct Account: FeatherApiModel {
+        struct User: FeatherObjectModule {}
+        struct Account: FeatherObjectModel {
             typealias Module = User
         }
         
@@ -90,8 +90,8 @@ final class FeatherApiTests: XCTestCase {
     }
     
     func testAssetKey() async throws {
-        struct User: FeatherApiModule {}
-        struct Account: FeatherApiModel {
+        struct User: FeatherObjectModule {}
+        struct Account: FeatherObjectModel {
             typealias Module = User
         }
         
@@ -100,8 +100,8 @@ final class FeatherApiTests: XCTestCase {
     }
     
     func testPermissionKey() async throws {
-        struct User: FeatherApiModule {}
-        struct Account: FeatherApiModel {
+        struct User: FeatherObjectModule {}
+        struct Account: FeatherObjectModel {
             typealias Module = User
         }
         
@@ -110,8 +110,8 @@ final class FeatherApiTests: XCTestCase {
     }
     
     func testAvailablePermissions() async throws {
-        struct User: FeatherApiModule {}
-        struct Account: FeatherApiModel {
+        struct User: FeatherObjectModule {}
+        struct Account: FeatherObjectModel {
             typealias Module = User
         }
         

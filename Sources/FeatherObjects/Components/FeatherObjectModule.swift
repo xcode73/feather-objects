@@ -1,16 +1,16 @@
 //
-//  FeatherApiModule.swift
-//  FeatherApi
+//  FeatherObjectsModule.swift
+//  FeatherObjects
 //
 //  Created by Tibor Bodecs on 2021. 12. 26..
 //
 
 /// generic API module protocol
-public protocol FeatherApiModule: FeatherApiComponent {
+public protocol FeatherObjectModule: FeatherObjectComponent {
     
 }
 
-public extension FeatherApiModule {
+public extension FeatherObjectModule {
     
     static func permission(for action: FeatherPermission.Action) -> FeatherPermission {
         .init(namespace: permissionKey, context: "module", action: action)

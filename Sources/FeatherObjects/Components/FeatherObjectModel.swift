@@ -1,15 +1,15 @@
 //
-//  FeatherApiModel.swift
-//  FeatherApi
+//  FeatherObjectsModel.swift
+//  FeatherObjects
 //
 //  Created by Tibor Bodecs on 2021. 12. 26..
 //
 
 /// generic API model
-public protocol FeatherApiModel: FeatherApiComponent {
+public protocol FeatherObjectModel: FeatherObjectComponent {
 
     /// the associated Module
-    associatedtype Module: FeatherApiModule
+    associatedtype Module: FeatherObjectModule
     
     /// key to identify a given object (e.g. userId)
     static var pathIdKey: String { get }
@@ -24,7 +24,7 @@ public protocol FeatherApiModel: FeatherApiComponent {
     static var assetPath: String{ get }
 }
 
-public extension FeatherApiModel {
+public extension FeatherObjectModel {
     
     static var pathIdKey: String { String(describing: self).lowercased() + "Id" }
     static var pathKey: String { String(describing: self).lowercased() + "s" }

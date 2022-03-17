@@ -1,12 +1,12 @@
 //
-//  FeatherApiComponent.swift
-//  FeatherApi
+//  FeatherObjectsComponent.swift
+//  FeatherObjects
 //
 //  Created by Tibor Bodecs on 2021. 12. 26..
 //
 
 /// generic api component
-public protocol FeatherApiComponent {
+public protocol FeatherObjectComponent {
     
     /// path of the given component for the API endpoint
     static var pathKey: String { get }
@@ -24,7 +24,7 @@ public protocol FeatherApiComponent {
     static func availablePermissions() -> [FeatherPermission]
 }
 
-public extension FeatherApiComponent {
+public extension FeatherObjectComponent {
 
     static var pathKey: String { String(describing: self).lowercased() }
     static var permissionKey: String { String(describing: self).lowercased() }
