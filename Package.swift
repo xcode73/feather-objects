@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "feather-objects",
     platforms: [
-       .macOS(.v12),
+        .macOS(.v10_15),
     ],
     products: [
         .library(name: "FeatherObjects", targets: ["FeatherObjects"]),
