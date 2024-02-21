@@ -8,6 +8,7 @@ let package = Package(
     ],
     products: [
         .library(name: "FeatherObjects", targets: ["FeatherObjects"]),
+        
     ],
     dependencies: [
         
