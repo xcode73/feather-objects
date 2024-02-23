@@ -1,4 +1,4 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.9
 import PackageDescription
 
 let package = Package(
@@ -19,6 +19,7 @@ let package = Package(
         .testTarget(name: "FeatherObjectsTests", dependencies: [
             .target(name: "FeatherObjects"),
         ]),
-    ]
+    ],
+    swiftLanguageVersions: [.v5]
 )
 
